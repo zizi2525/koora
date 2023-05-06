@@ -41,13 +41,13 @@ export default function live ({ matches, cdn1}) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`http://127.0.0.1:8000/api/${context.params.id}`)
+    const res = await fetch(`http://185.165.242.241:3080/api/${context.params.id}`)
     const matches = await res.json()
     const vv = matches.cdn.split('/')[4]
     console.log(vv)
-    const res1 = await fetch(`http://127.0.0.1:8000/api/player/${vv}`)
+    const res1 = await fetch(`http://185.165.242.241:3080/api/player/${vv}`)
     const cdn1 = await res1.json()
-    console.log(`http://127.0.0.1:8000/api/player/${vv}`)
+    console.log(`http://185.165.242.241:3080/api/player/${vv}`)
     return {
         props: {
             matches,
