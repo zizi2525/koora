@@ -182,7 +182,7 @@ export default function Home({ matches }) {
 
 export async function getStaticProps() {
 
-    const res = await fetch('http://127.0.0.1:8000/api/today')
+    const res = await fetch('http://185.165.242.241:3080/api/today')
     const matches = await res.json()
   
     return {
